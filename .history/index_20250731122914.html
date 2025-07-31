@@ -261,7 +261,7 @@
 
       /* Progress Bar */
       .progress-section {
-        /* margin-top: 40px; */
+        margin-top: 40px;
         text-align: center;
         animation: slideInUp 1s ease-out 2s both;
       }
@@ -470,7 +470,7 @@
         }
 
         .logo {
-          width: 200px;
+          width: 150px;
         }
       }
 
@@ -492,7 +492,7 @@
         }
 
         .logo {
-          width: 200px;
+          width: 120px;
         }
       }
 
@@ -555,7 +555,30 @@
         </p>
       </div>
 
-   
+      <!-- Countdown Section -->
+      <div class="countdown-section">
+        <h2 class="countdown-title">Launching In</h2>
+        
+        <div class="countdown-grid">
+          <div class="countdown-item">
+            <span class="countdown-number" id="days">00</span>
+            <span class="countdown-label">Days</span>
+          </div>
+          <div class="countdown-item">
+            <span class="countdown-number" id="hours">00</span>
+            <span class="countdown-label">Hours</span>
+          </div>
+          <div class="countdown-item">
+            <span class="countdown-number" id="minutes">00</span>
+            <span class="countdown-label">Minutes</span>
+          </div>
+          <div class="countdown-item">
+            <span class="countdown-number" id="seconds">00</span>
+            <span class="countdown-label">Seconds</span>
+          </div>
+        </div>
+      </div>
+
       <!-- Progress Bar -->
       <div class="progress-section">
         <h3 style="color: #fff; margin-bottom: 10px;">Development Progress</h3>
@@ -567,13 +590,13 @@
 
       <!-- Social Links -->
       <div class="social-links">
-        <a href="mailto: baziksocial@gmail.com" class="social-link" data-tooltip="Email"><i class="fas fa-envelope"></i></a>
+        <a href="mailto:baziksocial@gmail.com" class="social-link" data-tooltip="Email"><i class="fas fa-envelope"></i></a>
         <a href="tel:+919313699953" class="social-link" data-tooltip="Phone"><i class="fas fa-phone"></i></a>
         <!-- <a href="#" class="social-link" data-tooltip="Website"><i class="fas fa-globe"></i></a> -->
         <a href="https://maps.app.goo.gl/HMkYvBMt7xa8uMUZ8" target="_blank" class="social-link" data-tooltip="Location"><i class="fas fa-map-marker-alt"></i></a>
-        <a href="https://www.facebook.com/TheBazik/" target="_blank" class="social-link facebook" data-tooltip="Facebook"><i class="fab fa-facebook-f"></i></a>
-        <a href="https://www.instagram.com/bazik_manubhai/?hl=en" target="_blank" class="social-link instagram" data-tooltip="Instagram"><i class="fab fa-instagram"></i></a>
-        <a href="https://wa.me/919313699953?text=Hello%20there!" target="_blank" class="social-link whatsapp" data-tooltip="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+        <a href="https://www.facebook.com/TheBazik/"  class="social-link facebook" data-tooltip="Facebook"><i class="fab fa-facebook-f"></i></a>
+        <a href="#" class="social-link instagram" data-tooltip="Instagram"><i class="fab fa-instagram"></i></a>
+        <a href="#" class="social-link whatsapp" data-tooltip="WhatsApp"><i class="fab fa-whatsapp"></i></a>
         <!-- <a href="#" class="social-link youtube" data-tooltip="YouTube"><i class="fab fa-youtube"></i></a> -->
         <!-- <a href="#" class="social-link linkedin" data-tooltip="LinkedIn"><i class="fab fa-linkedin-in"></i></a> -->
         <!-- <a href="#" class="social-link twitter" data-tooltip="Twitter"><i class="fab fa-twitter"></i></a> -->
@@ -581,6 +604,31 @@
     </div>
 
     <script>
+      // Enhanced Countdown Timer
+      const countDownDate = new Date("Dec 31, 2024 23:59:59").getTime();
+
+      const countdownTimer = setInterval(function() {
+        const now = new Date().getTime();
+        const distance = countDownDate - now;
+
+        const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+        const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+        const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+        // Add leading zeros
+        document.getElementById("days").innerHTML = days.toString().padStart(2, '0');
+        document.getElementById("hours").innerHTML = hours.toString().padStart(2, '0');
+        document.getElementById("minutes").innerHTML = minutes.toString().padStart(2, '0');
+        document.getElementById("seconds").innerHTML = seconds.toString().padStart(2, '0');
+
+        if (distance < 0) {
+          clearInterval(countdownTimer);
+          document.querySelector(".countdown-section").innerHTML = 
+            '<h2 style="color: #F7B032; font-size: 2em;">🎉 We\'re Live! 🎉</h2>';
+        }
+      }, 1000);
+
       // Add scroll-triggered animations
       const observerOptions = {
         threshold: 0.1,
@@ -596,7 +644,7 @@
       }, observerOptions);
 
       // Observe all animated elements
-      document.querySelectorAll('.hero-section, .progress-section, .social-links').forEach(el => {
+      document.querySelectorAll('.hero-section, .countdown-section, .progress-section, .social-links').forEach(el => {
         observer.observe(el);
       });
 
@@ -610,64 +658,6 @@
           const speed = (index + 1) * 0.5;
           shape.style.transform = `translate(${x * speed}px, ${y * speed}px)`;
         });
-      });
-
-      // Enhanced contact link functionality
-      document.addEventListener('DOMContentLoaded', function() {
-        // Email link enhancement
-        const emailLink = document.querySelector('a[href^="mailto:"]');
-        if (emailLink) {
-          emailLink.addEventListener('click', function(e) {
-            // Add a small delay to ensure the mail client opens properly
-            setTimeout(() => {
-              console.log('Opening email client...');
-            }, 100);
-          });
-        }
-
-        // Phone link enhancement
-        const phoneLink = document.querySelector('a[href^="tel:"]');
-        if (phoneLink) {
-          phoneLink.addEventListener('click', function(e) {
-            // Add a small delay to ensure the phone dialer opens properly
-            setTimeout(() => {
-              console.log('Opening phone dialer...');
-            }, 100);
-          });
-        }
-
-        // WhatsApp link enhancement
-        const whatsappLink = document.querySelector('a[href*="wa.me"]');
-        if (whatsappLink) {
-          whatsappLink.addEventListener('click', function(e) {
-            // Add a small delay to ensure WhatsApp opens properly
-            setTimeout(() => {
-              console.log('Opening WhatsApp...');
-            }, 100);
-          });
-        }
-
-        // Add click feedback for all social links
-        const socialLinks = document.querySelectorAll('.social-link');
-        socialLinks.forEach(link => {
-          link.addEventListener('click', function(e) {
-            // Add a visual feedback animation
-            this.style.transform = 'scale(0.95)';
-            setTimeout(() => {
-              this.style.transform = '';
-            }, 150);
-          });
-        });
-      });
-
-      // Add keyboard navigation support
-      document.addEventListener('keydown', function(e) {
-        if (e.key === 'Enter' || e.key === ' ') {
-          const focusedElement = document.activeElement;
-          if (focusedElement && focusedElement.classList.contains('social-link')) {
-            focusedElement.click();
-          }
-        }
       });
     </script>
   </body>

@@ -9,7 +9,6 @@
       href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Poppins:wght@300;400;500;600;700&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
     <style>
       * {
         margin: 0;
@@ -20,7 +19,7 @@
       body {
         font-family: "Poppins", sans-serif;
         min-height: 100vh;
-        background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+        background: linear-gradient(135deg, #F7B032 0%, #FF8C42 50%, #FF6B6B 100%);
         color: #fff;
         overflow-x: hidden;
         position: relative;
@@ -40,7 +39,7 @@
       .floating-shape {
         position: absolute;
         border-radius: 50%;
-        background: rgba(247, 176, 50, 0.1);
+        background: rgba(255, 255, 255, 0.1);
         animation: float 6s ease-in-out infinite;
       }
 
@@ -113,16 +112,16 @@
       .logo {
         width: 200px;
         height: auto;
-        filter: drop-shadow(0 10px 20px rgba(247, 176, 50, 0.4));
+        filter: drop-shadow(0 10px 20px rgba(247, 176, 50, 0.3));
         animation: logoFloat 4s ease-in-out infinite;
       }
 
       @keyframes logoGlow {
         0% {
-          filter: drop-shadow(0 10px 20px rgba(247, 176, 50, 0.4));
+          filter: drop-shadow(0 10px 20px rgba(247, 176, 50, 0.3));
         }
         100% {
-          filter: drop-shadow(0 15px 30px rgba(247, 176, 50, 0.8));
+          filter: drop-shadow(0 15px 30px rgba(247, 176, 50, 0.6));
         }
       }
 
@@ -139,7 +138,7 @@
         font-family: "Playfair Display", serif;
         font-size: 3.5em;
         font-weight: 700;
-        background: linear-gradient(45deg, #F7B032, #FFD700, #FFA500);
+        background: linear-gradient(45deg, #F7B032, #FF8C42, #FF6B6B);
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
         background-clip: text;
@@ -159,7 +158,7 @@
 
       .tagline {
         font-size: 1.4em;
-        color: #e8e8e8;
+        color: rgba(255, 255, 255, 0.9);
         margin-bottom: 10px;
         animation: fadeInUp 1.5s ease-out 0.5s both;
       }
@@ -184,20 +183,20 @@
 
       /* Countdown Section */
       .countdown-section {
-        background: rgba(255, 255, 255, 0.05);
-        backdrop-filter: blur(15px);
+        background: rgba(255, 255, 255, 0.1);
+        backdrop-filter: blur(10px);
         border-radius: 25px;
         padding: 40px;
         margin: 30px 0;
-        border: 1px solid rgba(247, 176, 50, 0.2);
-        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
         animation: slideInUp 1s ease-out 1s both;
       }
 
       .countdown-title {
         font-size: 1.8em;
         margin-bottom: 30px;
-        color: #F7B032;
+        color: #fff;
         text-align: center;
         font-weight: 600;
       }
@@ -238,7 +237,7 @@
         color: #F7B032;
         display: block;
         margin-bottom: 5px;
-        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
         animation: numberPulse 2s ease-in-out infinite;
       }
 
@@ -253,7 +252,7 @@
 
       .countdown-label {
         font-size: 0.9em;
-        color: #b8b8b8;
+        color: rgba(255, 255, 255, 0.8);
         text-transform: uppercase;
         letter-spacing: 1px;
         font-weight: 500;
@@ -261,7 +260,7 @@
 
       /* Progress Bar */
       .progress-section {
-        /* margin-top: 40px; */
+        margin-top: 40px;
         text-align: center;
         animation: slideInUp 1s ease-out 2s both;
       }
@@ -270,7 +269,7 @@
         width: 100%;
         max-width: 400px;
         height: 8px;
-        background: rgba(255, 255, 255, 0.1);
+        background: rgba(255, 255, 255, 0.2);
         border-radius: 10px;
         overflow: hidden;
         margin: 20px auto;
@@ -279,7 +278,7 @@
 
       .progress-fill {
         height: 100%;
-        background: linear-gradient(90deg, #F7B032, #FFD700);
+        background: linear-gradient(90deg, #F7B032, #FF8C42);
         border-radius: 10px;
         animation: progressFill 3s ease-out;
         position: relative;
@@ -321,114 +320,28 @@
         gap: 20px;
         justify-content: center;
         animation: slideInUp 1s ease-out 2.5s both;
-        flex-wrap: wrap;
       }
 
       .social-link {
-        width: 55px;
-        height: 55px;
+        width: 50px;
+        height: 50px;
         border-radius: 50%;
-        background: rgba(247, 176, 50, 0.1);
+        background: rgba(255, 255, 255, 0.1);
         display: flex;
         align-items: center;
         justify-content: center;
         color: #F7B032;
         text-decoration: none;
-        font-size: 1.3em;
+        font-size: 1.2em;
         transition: all 0.3s ease;
         border: 2px solid rgba(247, 176, 50, 0.3);
-        position: relative;
-        overflow: hidden;
-      }
-
-      .social-link::before {
-        content: '';
-        position: absolute;
-        top: 0;
-        left: -100%;
-        width: 100%;
-        height: 100%;
-        background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
-        transition: left 0.5s;
-      }
-
-      .social-link:hover::before {
-        left: 100%;
       }
 
       .social-link:hover {
         background: #F7B032;
-        color: #1a1a2e;
-        transform: translateY(-5px) scale(1.1);
-        box-shadow: 0 10px 25px rgba(247, 176, 50, 0.4);
-      }
-
-      .social-link i {
-        transition: transform 0.3s ease;
-      }
-
-      .social-link:hover i {
-        transform: scale(1.2);
-      }
-
-      /* Social Media Specific Colors */
-      .social-link.facebook:hover {
-        background: #1877f2;
-        color: white;
-        border-color: #1877f2;
-      }
-
-      .social-link.instagram:hover {
-        background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
-        color: white;
-        border-color: #dc2743;
-      }
-
-      .social-link.whatsapp:hover {
-        background: #25d366;
-        color: white;
-        border-color: #25d366;
-      }
-
-      .social-link.youtube:hover {
-        background: #ff0000;
-        color: white;
-        border-color: #ff0000;
-      }
-
-      .social-link.linkedin:hover {
-        background: #0077b5;
-        color: white;
-        border-color: #0077b5;
-      }
-
-      .social-link.twitter:hover {
-        background: #1da1f2;
-        color: white;
-        border-color: #1da1f2;
-      }
-
-      /* Tooltip */
-      .social-link::after {
-        content: attr(data-tooltip);
-        position: absolute;
-        bottom: -40px;
-        left: 50%;
-        transform: translateX(-50%);
-        background: rgba(0, 0, 0, 0.8);
-        color: white;
-        padding: 5px 10px;
-        border-radius: 5px;
-        font-size: 0.8em;
-        white-space: nowrap;
-        opacity: 0;
-        visibility: hidden;
-        transition: all 0.3s ease;
-      }
-
-      .social-link:hover::after {
-        opacity: 1;
-        visibility: visible;
+        color: #fff;
+        transform: translateY(-5px);
+        box-shadow: 0 10px 20px rgba(247, 176, 50, 0.3);
       }
 
       /* Animations */
@@ -470,7 +383,7 @@
         }
 
         .logo {
-          width: 200px;
+          width: 150px;
         }
       }
 
@@ -492,7 +405,7 @@
         }
 
         .logo {
-          width: 200px;
+          width: 120px;
         }
       }
 
@@ -555,7 +468,30 @@
         </p>
       </div>
 
-   
+      <!-- Countdown Section -->
+      <div class="countdown-section">
+        <h2 class="countdown-title">Launching In</h2>
+        
+        <div class="countdown-grid">
+          <div class="countdown-item">
+            <span class="countdown-number" id="days">00</span>
+            <span class="countdown-label">Days</span>
+          </div>
+          <div class="countdown-item">
+            <span class="countdown-number" id="hours">00</span>
+            <span class="countdown-label">Hours</span>
+          </div>
+          <div class="countdown-item">
+            <span class="countdown-number" id="minutes">00</span>
+            <span class="countdown-label">Minutes</span>
+          </div>
+          <div class="countdown-item">
+            <span class="countdown-number" id="seconds">00</span>
+            <span class="countdown-label">Seconds</span>
+          </div>
+        </div>
+      </div>
+
       <!-- Progress Bar -->
       <div class="progress-section">
         <h3 style="color: #fff; margin-bottom: 10px;">Development Progress</h3>
@@ -567,20 +503,39 @@
 
       <!-- Social Links -->
       <div class="social-links">
-        <a href="mailto: baziksocial@gmail.com" class="social-link" data-tooltip="Email"><i class="fas fa-envelope"></i></a>
-        <a href="tel:+919313699953" class="social-link" data-tooltip="Phone"><i class="fas fa-phone"></i></a>
-        <!-- <a href="#" class="social-link" data-tooltip="Website"><i class="fas fa-globe"></i></a> -->
-        <a href="https://maps.app.goo.gl/HMkYvBMt7xa8uMUZ8" target="_blank" class="social-link" data-tooltip="Location"><i class="fas fa-map-marker-alt"></i></a>
-        <a href="https://www.facebook.com/TheBazik/" target="_blank" class="social-link facebook" data-tooltip="Facebook"><i class="fab fa-facebook-f"></i></a>
-        <a href="https://www.instagram.com/bazik_manubhai/?hl=en" target="_blank" class="social-link instagram" data-tooltip="Instagram"><i class="fab fa-instagram"></i></a>
-        <a href="https://wa.me/919313699953?text=Hello%20there!" target="_blank" class="social-link whatsapp" data-tooltip="WhatsApp"><i class="fab fa-whatsapp"></i></a>
-        <!-- <a href="#" class="social-link youtube" data-tooltip="YouTube"><i class="fab fa-youtube"></i></a> -->
-        <!-- <a href="#" class="social-link linkedin" data-tooltip="LinkedIn"><i class="fab fa-linkedin-in"></i></a> -->
-        <!-- <a href="#" class="social-link twitter" data-tooltip="Twitter"><i class="fab fa-twitter"></i></a> -->
+        <a href="#" class="social-link">📧</a>
+        <a href="#" class="social-link">📱</a>
+        <a href="#" class="social-link">🌐</a>
+        <a href="#" class="social-link">📞</a>
       </div>
     </div>
 
     <script>
+      // Enhanced Countdown Timer
+      const countDownDate = new Date("Dec 31, 2024 23:59:59").getTime();
+
+      const countdownTimer = setInterval(function() {
+        const now = new Date().getTime();
+        const distance = countDownDate - now;
+
+        const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+        const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+        const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+        // Add leading zeros
+        document.getElementById("days").innerHTML = days.toString().padStart(2, '0');
+        document.getElementById("hours").innerHTML = hours.toString().padStart(2, '0');
+        document.getElementById("minutes").innerHTML = minutes.toString().padStart(2, '0');
+        document.getElementById("seconds").innerHTML = seconds.toString().padStart(2, '0');
+
+        if (distance < 0) {
+          clearInterval(countdownTimer);
+          document.querySelector(".countdown-section").innerHTML = 
+            '<h2 style="color: #F7B032; font-size: 2em;">🎉 We\'re Live! 🎉</h2>';
+        }
+      }, 1000);
+
       // Add scroll-triggered animations
       const observerOptions = {
         threshold: 0.1,
@@ -596,7 +551,7 @@
       }, observerOptions);
 
       // Observe all animated elements
-      document.querySelectorAll('.hero-section, .progress-section, .social-links').forEach(el => {
+      document.querySelectorAll('.hero-section, .countdown-section, .progress-section, .social-links').forEach(el => {
         observer.observe(el);
       });
 
@@ -610,64 +565,6 @@
           const speed = (index + 1) * 0.5;
           shape.style.transform = `translate(${x * speed}px, ${y * speed}px)`;
         });
-      });
-
-      // Enhanced contact link functionality
-      document.addEventListener('DOMContentLoaded', function() {
-        // Email link enhancement
-        const emailLink = document.querySelector('a[href^="mailto:"]');
-        if (emailLink) {
-          emailLink.addEventListener('click', function(e) {
-            // Add a small delay to ensure the mail client opens properly
-            setTimeout(() => {
-              console.log('Opening email client...');
-            }, 100);
-          });
-        }
-
-        // Phone link enhancement
-        const phoneLink = document.querySelector('a[href^="tel:"]');
-        if (phoneLink) {
-          phoneLink.addEventListener('click', function(e) {
-            // Add a small delay to ensure the phone dialer opens properly
-            setTimeout(() => {
-              console.log('Opening phone dialer...');
-            }, 100);
-          });
-        }
-
-        // WhatsApp link enhancement
-        const whatsappLink = document.querySelector('a[href*="wa.me"]');
-        if (whatsappLink) {
-          whatsappLink.addEventListener('click', function(e) {
-            // Add a small delay to ensure WhatsApp opens properly
-            setTimeout(() => {
-              console.log('Opening WhatsApp...');
-            }, 100);
-          });
-        }
-
-        // Add click feedback for all social links
-        const socialLinks = document.querySelectorAll('.social-link');
-        socialLinks.forEach(link => {
-          link.addEventListener('click', function(e) {
-            // Add a visual feedback animation
-            this.style.transform = 'scale(0.95)';
-            setTimeout(() => {
-              this.style.transform = '';
-            }, 150);
-          });
-        });
-      });
-
-      // Add keyboard navigation support
-      document.addEventListener('keydown', function(e) {
-        if (e.key === 'Enter' || e.key === ' ') {
-          const focusedElement = document.activeElement;
-          if (focusedElement && focusedElement.classList.contains('social-link')) {
-            focusedElement.click();
-          }
-        }
       });
     </script>
   </body>

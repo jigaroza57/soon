@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Aaron Impex</title>
+    <link rel="shortcut icon" href="logo11.jpg" type="image/x-icon" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: "Playfair Display", serif;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        background: #000; /* Black background */
+        color: #fff; /* White text */
+        padding: 20px;
+      }
+
+      .wrapper {
+        background-color:whitesmoke; /* Dark gray wrapper */
+        color: #ff;
+        border-radius: 20px;
+        padding: 50px;
+        max-width: 600px;
+        width: 100%;
+        text-align: center;
+        position: relative;
+        z-index: 1;
+        box-shadow: 0 15px 30px rgba(255, 255, 255, 0.1);
+      }
+
+      .background-animations {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+        z-index: 0;
+      }
+
+      .background-animations::before,
+      .background-animations::after {
+        content: "";
+        position: absolute;
+        background: rgba(255, 255, 255, 0.05);
+        border-radius: 50%;
+        animation: moveCircle 8s ease-in-out infinite;
+      }
+
+      .background-animations::before {
+        top: -80px;
+        left: -80px;
+        width: 300px;
+        height: 300px;
+      }
+
+      .background-animations::after {
+        bottom: -80px;
+        right: -80px;
+        width: 400px;
+        height: 400px;
+        animation-duration: 10s;
+      }
+
+      @keyframes moveCircle {
+        0%,
+        100% {
+          transform: translate(0, 0);
+        }
+
+        50% {
+          transform: translate(60px, 60px);
+        }
+      }
+
+      .logo {
+      
+        width: 230px;
+        animation: fadeInScale 1.5s ease-in-out forwards;
+      }
+
+      @keyframes fadeInScale {
+        0% {
+          opacity: 0;
+          transform: scale(0.8);
+        }
+
+        100% {
+          opacity: 1;
+          transform: scale(1);
+        }
+      }
+
+      h1 {
+        font-size: 2.5em;
+        margin-top: 20px;
+        color: white;
+        font-style: italic;
+        letter-spacing: 2px;
+        animation: fadeInSlide 2s ease-in-out forwards;
+      }
+
+      @keyframes fadeInSlide {
+        0% {
+          opacity: 0;
+          transform: translateY(30px);
+        }
+
+        100% {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      .coming-soon-text {
+        font-size: 1.2em;
+        margin-top: 10px;
+        color: #ccc;
+        animation: fadeInSlide 2.5s ease-in-out forwards;
+      }
+
+      .countdown {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 30px;
+        width: 100%;
+        max-width: 500px;
+        color: #fff;
+        text-transform: uppercase;
+        animation: fadeInSlide 2.5s ease-in-out forwards;
+      }
+
+      .countdown-item {
+        font-size: 1.5em;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .countdown-item span {
+        font-size: 2.5em;
+        font-weight: bold;
+        color: #fff;
+        animation: scaleUp 0.8s ease-in-out infinite alternate;
+      }
+
+      @keyframes scaleUp {
+        0% {
+          transform: scale(1);
+        }
+
+        100% {
+          transform: scale(1.05);
+        }
+      }
+
+      .circle {
+        position: absolute;
+        width: 400px;
+        height: 400px;
+        border-radius: 50%;
+        background: rgba(255, 255, 255, 0.2);
+        animation: pulse 10s ease-in-out infinite;
+        z-index: -1;
+      }
+
+      .circle:nth-child(2) {
+        width: 300px;
+        height: 300px;
+        bottom: -80px;
+        left: -80px;
+        animation-duration: 12s;
+      }
+
+      .circle:nth-child(3) {
+        width: 300px;
+        height: 300px;
+        top: 20px;
+        right: -50px;
+        animation-duration: 12s;
+      }
+
+      @keyframes pulse {
+        0% {
+          transform: scale(1);
+          opacity: 0.7;
+        }
+
+        50% {
+          transform: scale(1.2);
+          opacity: 0.9;
+        }
+
+        100% {
+          transform: scale(1);
+          opacity: 0.7;
+        }
+      }
+
+      /* Updated Media Queries for better mobile responsiveness */
+      @media (max-width: 768px) {
+        .wrapper {
+          padding: 30px;
+        }
+
+        h1 {
+          font-size: 2.2em;
+        }
+
+        .coming-soon-text {
+          font-size: 1.1em;
+        }
+
+        .countdown-item span {
+          font-size: 2em;
+        }
+
+        .countdown {
+          /* flex-direction: column; */
+          gap: 10px;
+        }
+      }
+
+      @media (max-width: 480px) {
+        .wrapper {
+          padding: 20px;
+        }
+
+        h1 {
+          font-size: 1.8em;
+        }
+
+        .coming-soon-text {
+          font-size: 1em;
+        }
+
+        .countdown {
+          display: flex;
+          flex-wrap: wrap;
+          justify-content: space-between;
+        }
+
+        .countdown-item {
+          width: 48%;
+          /* Adjusted width to fit two items per row */
+          text-align: center;
+          margin-bottom: 10px;
+        }
+
+        .countdown-item span {
+          font-size: 1.8em;
+        }
+
+        .logo {
+          width: 200px;
+        }
+      }
+
+      @media (max-width: 360px) {
+        .wrapper {
+          padding: 15px;
+        }
+
+        h1 {
+          font-size: 1.6em;
+        }
+
+        .coming-soon-text {
+          font-size: 0.9em;
+        }
+
+        .countdown {
+          display: flex;
+          flex-wrap: wrap;
+          justify-content: center;
+          /* Center the countdown items */
+        }
+
+        .countdown-item {
+          width: 45%;
+          /* Adjust width to fit two items per row and center them */
+          text-align: center;
+          margin-bottom: 10px;
+        }
+
+        .countdown-item span {
+          font-size: 1.5em;
+        }
+
+        .logo {
+          width: 140px;
+        }
+      }
+
+      @media (max-width: 1024px) {
+        .wrapper {
+          padding: 40px;
+        }
+
+        h1 {
+          font-size: 2.3em;
+        }
+
+        .coming-soon-text {
+          font-size: 1.1em;
+        }
+
+        .countdown-item span {
+          font-size: 2.2em;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="background-animations"></div>
+
+    <div class="wrapper">
+      <img src="bg_logo.png" class="logo" alt="Logo" />
+      <h1>Coming Soon</h1>
+      <p class="coming-soon-text">🚧 Site is Under Construction</p>
+
+      <!-- Countdown Timer -->
+      <!-- <div class="countdown">
+            <div class="countdown-item">
+                <span id="days">0</span>
+                Days
+            </div>
+            <div class="countdown-item">
+                <span id="hours">0</span>
+                Hours
+            </div>
+            <div class="countdown-item">
+                <span id="minutes">0</span>
+                Minutes
+            </div>
+            <div class="countdown-item">
+                <span id="seconds">0</span>
+                Seconds
+            </div>
+        </div> -->
+    </div>
+
+    <script>
+      // Set the date we're counting down to
+      var countDownDate = new Date("Oct 13, 2024 23:59:59").getTime();
+
+      // Update the countdown every 1 second
+      var x = setInterval(function () {
+        var now = new Date().getTime();
+        var distance = countDownDate - now;
+
+        // Time calculations for days, hours, minutes and seconds
+        var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+        var hours = Math.floor(
+          (distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
+        );
+        var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+        var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+        // Display the result in the corresponding elements
+        document.getElementById("days").innerHTML = days;
+        document.getElementById("hours").innerHTML = hours;
+        document.getElementById("minutes").innerHTML = minutes;
+        document.getElementById("seconds").innerHTML = seconds;
+
+        // If the countdown is over, display a message
+        if (distance < 0) {
+          clearInterval(x);
+          document.querySelector(".countdown").innerHTML = "We're Live!";
+        }
+      }, 1000);
+    </script>
+  </body>
+</html>
